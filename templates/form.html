@@ -1,0 +1,25 @@
+{% extends "base.html" %}]
+{% block content %}
+    <form method="POST" >
+        {% csrf_token %}        <div class="form-group" >
+        <label for="exampleFormControlTextarea1">
+            <br>
+            <h1>An example of input sequence is given below:</h1>
+            <h1>{{ msg }}</h1>
+            <br>
+            <br> int, integer
+            <br> myFunction, function
+            <br> x, ID
+            <br> 5, NUM</label>
+        <br>
+        {{ form }}
+    </div>
+    </form>
+
+{% endblock %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1 >Symbol Table 1.0</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Size</th>
+            <th scope="col">Dimension</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {%  for i in symbols %}
+            <tr>
+            <th scope="row">{{ i.index }}</th>
+            <td>{{ i.name }}</td>
+            <td>{{ i.type }}</td>
+            <td>{{ i.size }}</td>
+            <td>{{ i.dimension }}</td>
+            <td>
+                <a href= {% url 'update_symbol' i.id %} class="text-decoration-none" >
+                    Update
+                </a>
+            </td>
+            <td>
+                <a href= {% url 'delete_symbol' i.id %} class="text-decoration-none" >
+                    Delete
+                </a>
+            </td>
+        {% endfor %}
+        </tr>
+        <tr align="middle">
+            <td colspan="7">
+                <a href= {% url 'add_symbol' %} class="text-decoration-none" >
+                    Add Symbol
+                </a>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+{% endblock %}
