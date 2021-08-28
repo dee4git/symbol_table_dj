@@ -20,7 +20,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('', views.home, name='home'),
-    path('add_symbol', views.add_symbol, name='add_symbol'),
+    path('add_symbol/', views.add_symbol, name='add_symbol'),
+    path('search/', views.search, name='search'),
     path('update_symbol/<int:symbol_id>/', views.update_symbol, name='update_symbol'),
     path('delete_symbol/<int:symbol_id>/', views.delete_symbol, name='delete_symbol')
 ]

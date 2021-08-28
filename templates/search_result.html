@@ -1,0 +1,24 @@
+{% extends "base.html" %}]
+{% block content %}
+    {% if search_results %}
+        {% for i in search_results %}
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-header">{{ i.name }}</div>
+                <div class="card-body">
+                    <h5 class="card-title">Index: {{ i.index }}</h5>
+                    <h5 class="card-title">Type: {{ i.type }}</h5>
+                    <h5 class="card-title">Size: {{ i.size }}</h5>
+                    <h5 class="card-title">Dimension: {{ i.dimension }}</h5>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>No Results Found</h3>
+    {% endif %}
+{% endblock %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
