@@ -2,6 +2,7 @@
 {% block content %}
     {% if search_results %}
         {% for i in search_results %}
+            <h3>Search result for "{{ i.name }}" </h3>
             <div class="card bg-light mb-3" style="max-width: 18rem;">
                 <div class="card-header">{{ i.name }}</div>
                 <div class="card-body">

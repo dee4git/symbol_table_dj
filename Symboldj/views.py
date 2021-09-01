@@ -13,7 +13,7 @@ def search(request):
         key = get_custom_hash(str(keyword))
         print('key', key)
         for i in symbols:
-            if i.index == key:
+            if i.index == key and i.name == keyword:
                 search_results.append(i)
 
     return render(request, 'search_result.html', {
@@ -53,9 +53,9 @@ def index_maker(i_name):
     # also deletes the one to be replaced
     index = (get_custom_hash(str(i_name)))
     symbols = Symbol.objects.all()
-    for i in symbols:
-        if i.index == index:
-            i.delete()
+    # for i in symbols:
+    #     if i.index == index:
+    #         i.delete()
     return index
 
 
@@ -113,7 +113,7 @@ def update_symbol(request, symbol_id):
 
 
 def is_valid(result):
-    if len(result)==2:
+    if len(result) == 2:
         return True
 
 
